@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="40" viewBox="0 0 28 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="28" height="40" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Icons_Filled_Bookmark" data-name="Icons / Filled / Bookmark" clip-path="url(#clip-path)">
+    <path id="_13_Bookmark" data-name="13 Bookmark" d="M23.52,39.269l-7.665-7.3a2.719,2.719,0,0,0-3.71,0l-7.665,7.3a2.722,2.722,0,0,1-2.859.541A2.5,2.5,0,0,1,0,37.5V4.167A4.275,4.275,0,0,1,4.375,0h19.25A4.275,4.275,0,0,1,28,4.167V37.5a2.5,2.5,0,0,1-1.621,2.308A2.722,2.722,0,0,1,23.52,39.269Z"/>
+  </g>
+</svg>
