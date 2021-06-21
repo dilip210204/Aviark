@@ -243,7 +243,14 @@
                                     <div class="row">
                                        <div class="col-sm-6 col-md-6 col-lg-6 text-left">
                                           <img src="{{ asset('images/icons/search_profession.svg')}}" alt="story-img" class=" avatar-30">
-                                          {{ $card->who }}
+                                          
+
+                                          @if($card->global == 'yes')
+                                                {{ $card->who }}
+                                          @else
+                                                {{ $capturing[0]->profession }}
+                                          @endif
+
                                        </div>
                                        <div class="col-sm-6 col-md-6 col-lg-6 text-right">
                                            <img src="{{ asset('images/icons/price.svg')}}" alt="price" class="avatar-30">
