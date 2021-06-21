@@ -116,35 +116,35 @@
                         <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
                               <a href="{{route('lighthouse.saved-for-later') }}">
                                  <div class="tab-section">
-                                    <img src="{{ asset('images/icons/lighthouse.svg') }}">
+                                    <img src="{{ asset('images/icons/saved_for_later.png') }}">
                                  </div>
                               </a>
                         </div>
                         <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
                               <a href="{{route('lighthouse.in-progress') }}">
                                  <div class="tab-section">
-                                    <img src="{{ asset('images/icons/lighthouse.svg') }}">
+                                    <img src="{{ asset('images/icons/in_progress.png') }}">
                                  </div>
                               </a>
                         </div>
                         <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
                               <a href="{{route('lighthouse.completed') }}">
                                  <div class="tab-section">
-                                       <img src="{{ asset('images/icons/lighthouse.svg') }}">
+                                       <img src="{{ asset('images/icons/completed.png') }}">
                                  </div>
                               </a>
                         </div>
                         <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
                               <a href="{{route('lighthouse.declined') }}">
                                  <div class="tab-section">
-                                       <img src="{{ asset('images/icons/lighthouse.svg') }}">
+                                       <img src="{{ asset('images/icons/declined.png') }}">
                                  </div>
                               </a>
                         </div>
                         <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
                               <a href="{{route('lighthouse.dustbin') }}">
                                  <div class="tab-section">
-                                    <img src="{{ asset('images/icons/lighthouse.svg') }}">
+                                    <img src="{{ asset('images/icons/dustbin.png') }}">
                                  </div>
                               </a>
                         </div>

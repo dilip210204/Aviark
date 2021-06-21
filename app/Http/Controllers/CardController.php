@@ -38,17 +38,7 @@ class CardController extends Controller
 
     public function lighthouse()
     {
-        // $cards = Card::orderBy('id','desc')->get();
-        // $cards = DB::select('select * from cards');
-
-        $cards = DB::table('cards as a')
-            ->join('users as b', 'b.id', '=', 'a.who')
-            ->select('a.*', 'b.city as city' ,'b.country as country' ,'b.profile as profile','b.hobby as hobby' ,'b.interests as interests')
-            ->where('global','=','no')
-            ->where('user_id','=', Auth::user()->id)
-            ->orWhere('who','=', Auth::user()->id)
-            ->get();
-
+        $cards = array();
         return view('frontend.card.lighthouse',compact('cards'));
     }
 

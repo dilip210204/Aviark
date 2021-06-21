@@ -31,7 +31,7 @@
                      </li>
 
                      <li>
-                        <a href="{{ route('lighthouse.in-progress')}}" class="iq-waves-effect"><img src="{{ asset('images/icons/lighthouse.svg') }}" style="width: 19px;
+                        <a href="{{ route('lighthouse')}}" class="iq-waves-effect"><img src="{{ asset('images/icons/lighthouse.svg') }}" style="width: 19px;
     margin-right: 12px;" ><span>LightHouse</span></a>
                      </li>
 
