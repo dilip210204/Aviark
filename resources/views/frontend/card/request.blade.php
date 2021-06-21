@@ -39,28 +39,48 @@
                   <div class="chat-data-block">
                      <div class="row">
                         <div class="col-lg-12 scroller">
-                          <form  action="{{ route('card.request.submit') }}" enctype="multipart/form-data" method="post">
+                          <form  action="{{ route('card.request.next') }}" enctype="multipart/form-data" method="post">
                            @csrf
+
+                              @if(!empty($global))
+                                 <input type="hidden" name="global" value="{{ $global }}">
+                              @else
+                                 <input type="hidden" name="global" value="no">
+                              @endif
+
                               <div class="form-group">
                                  <label for="what">What? </label>
-                                 <input type="text" name="what" class="form-control" id="what" placeholder="Pictures of Rabits">
+                                 <input type="text" name="what" class="form-control" id="what" placeholder="e.g., ‘pictures from a typical Korean public market’.. ‘videos of kids skateboarding" required>
                               </div>
                               <div class="form-group">
                                  <div class="row">
-                                    <div class="col-sm-6 col-md-6 col-lg-6">
-                                       <label for="who?">who? </label>
+                                    <div class="col-sm-6 col-md-1 col-lg-1>
+                                       <label for="who?">Who? </label>
                                     </div>
-                                    <div class="col-sm-6 col-md-6 col-lg-6">
-                                       <select name="who" class="form-control w-50 float-right"  id="who?">
-
-                                      
-                                        @foreach($profiles as $profile)
-                                          <option value="{{ $profile->id }}">{{ $profile->name }}</option>
-                                        @endforeach
-                                       </select>
+                                    <div class="col-sm-6 col-md-11 col-lg-11">
+                                       @if(!empty($global))
+                                          <input type="text" name="who" class="form-control" id="who" placeholder="e.g. ‘skateboarder ‘…’geologist’… ‘any teenager’.." required >
+                                          <input type="hidden" name="capturing" value="all">
+                                       @else
+                                          <input type="text" name="who" class="form-control" id="who" value="{{ $profiles[0]->name }}" readonly >
+                                          <input type="hidden" name="capturing" value="{{ $profiles[0]->name }}">
+                                       @endif
                                     </div>
                                  </div>
                               </div>
+
+                              <div class="form-group">
+                                 <div class="row">
+                                    <div class="col-sm-6 col-md-1 col-lg-1>
+                                       <label for="where?">Where? </label>
+                                    </div>
+                                    <div class="col-sm-6 col-md-11 col-lg-11">
+                                      <input type="text" name="where" class="form-control" id="where" placeholder="e.g. ‘any port ‘…’Kenya’… ‘Europe’.." required>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              
 
                               <div class="form-group">
                                  <label for="exampleInputText1">Type? (You can choose multiple) </label>
@@ -70,7 +90,8 @@
 
                                           <label>
                                             <input type="radio" name="photo" value="photo" >
-                                            <img src="{{ asset('images/profile/icons/photo.svg')}}" alt="story-img" class="avatar-70">
+                                            <img src="{{ asset('images/icons/photo.svg')}}" alt="story-img" class="avatar-70">
+                                            <h6 class="text-center">Photo</h6>
                                           </label>
                                        </div>
                                     </div>
@@ -78,7 +99,8 @@
                                        <div class="form-group">
                                           <label>
                                             <input type="radio" name="video" value="video" >
-                                            <img src="{{ asset('images/profile/icons/video.svg')}}" alt="story-img" class="avatar-70">
+                                            <img src="{{ asset('images/icons/video.svg')}}" alt="story-img" class="avatar-70">
+                                            <h6 class="text-center">Video</h6>
                                           </label>
                                        </div>
                                     </div>
@@ -86,7 +108,8 @@
                                        <div class="form-group">
                                           <label>
                                           <input type="radio" name="audio" value="audio" >
-                                            <img src="{{ asset('images/profile/icons/audio.svg')}}" alt="story-img" class="avatar-70">
+                                            <img src="{{ asset('images/icons/audio.svg')}}" alt="story-img" class="avatar-70">
+                                            <h6 class="text-center">Audio</h6>
                                           </label>
                                        </div>
                                     </div>
@@ -94,8 +117,12 @@
                                         <div class="form-group">
                                           <label>
                                           <input type="radio" name="knowledge" value="knowledge" >
-                                            <img src="{{ asset('images/profile/icons/knowledge.svg')}}" alt="story-img" class="avatar-70">
+                                            <img src="{{ asset('images/icons/knowledge.svg')}}" alt="story-img" class="avatar-70">
+                                            <h6 class="text-center">Knowledge</h6>
                                           </label>
+                                          <p>
+                                             <a href="javascript:void(0)">What’s this?</a>
+                                          </p>
                                        </div>
                                     </div>
                                  </div>
@@ -109,19 +136,8 @@
 
                               <div class="form-group">
                                  <label for="notes"> Notes</label>
-                                 <textarea class="form-control" name="notes" id="notes" rows="5" placeholder="e.g. ‘the best of the best moves you can find! Smartphone perfect! max length, 1 minute!’"></textarea>
+                                 <textarea class="form-control" name="notes" id="notes" rows="5" placeholder="e.g. ‘the best of the best moves you can find! Smartphone perfect! max length, 1 minute!’" required></textarea>
                               </div>
-
-                              <div class="form-group">
-                                 <label for="currency">Currency</label>
-                                 <input type="text" name="currency" class="form-control" id="currency" placeholder="Currency">
-                              </div>
-
-                              <div class="form-group">
-                                 <label for="amount">Amount</label>
-                                 <input type="text" name="amount" class="form-control" id="amount" placeholder="Amount">
-                              </div>
-
                              
                               <div class="form-group">
                                  <button type="submit" class="btn btn-success w-100 p-3">Next</button>

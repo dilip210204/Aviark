@@ -5,27 +5,62 @@
                      <!-- <li>
                         <a href="index.html" class="iq-waves-effect"><i class="las la-newspaper"></i><span>Newsfeed</span></a>
                      </li> -->
-                     <li>
-                        <a href="profile.html" class="iq-waves-effect"><i class="las la-user"></i><span>Profile</span></a>
-                     </li>
                      
-                     <li>
+                     
+                    <!--  <li>
                         <a href="{{ route('profile.browse')}}" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Browse Profile</span></a>
                      </li>
 
                      <li>
                         <a href="{{ route('profile.request')}}" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Create Profile</span></a>
+                     </li> -->
+
+                     <li>
+                        <a href="{{ route('profile.browse') }}" class="iq-waves-effect"><img src="{{ asset('images/icons/search.svg') }}" style="width: 19px;
+    margin-right: 12px;" ><span>Search</span></a>
                      </li>
+
+                     <li>
+                        <a href="{{ route('noah')}}" class="iq-waves-effect"><img src="{{ asset('images/icons/noah.svg') }}" style="width: 26px;
+    margin-right: 12px;" ><span>Noah</span></a>
+                     </li>
+
+                     <li>
+                        <a href="{{ route('card.request.list')}}" class="iq-waves-effect"><img src="{{ asset('images/icons/add.svg') }}" style="width: 19px;
+    margin-right: 12px;" ><span>Create a card</span></a>
+                     </li>
+
+                     <li>
+                        <a href="{{ route('lighthouse.in-progress')}}" class="iq-waves-effect"><img src="{{ asset('images/icons/lighthouse.svg') }}" style="width: 19px;
+    margin-right: 12px;" ><span>LightHouse</span></a>
+                     </li>
+
+
 
 
                      <li>
                         <a href="#blog" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="las la-user"></i><span>Profile</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="blog" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                           <li><a href="{{ route('profile')}}" class="iq-waves-effect"><i class="las la-user"></i><span>Profile</span></a></li>
                            <li><a href="{{ route('profile.request')}}"><i class="las la-user"></i>Create</a></li>
                            <li><a href="{{ route('profile.browse')}}"><i class="las la-user"></i>Browse</a></li>
                         </ul>
                      </li> 
 
+
+                    <!--  <li>
+                        <a href="#blog" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="la la-vcard-o"></i><span>Card</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="blog" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                           <li><a href="{{ route('card')}}" class="iq-waves-effect"><i class="las la-user"></i><span>Card</span></a></li>
+                           <li><a href="{{ route('card.request.list')}}"><i class="las la-user"></i>Create</a></li>
+                           <li><a href="#}"><i class="las la-user"></i>Create</a></li>
+                        </ul>
+                     </li>  -->
+
+                     
+
+                    
+                     
                      <!-- <li>
                         <a href="friend-list.html" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Friend Lists</span></a>
                      </li>

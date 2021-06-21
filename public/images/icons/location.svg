@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_276" data-name="Rectangle 276" width="40" height="40" transform="translate(1058 107)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Location_Icon" data-name="Location Icon" transform="translate(-1058 -107)" clip-path="url(#clip-path)">
+    <g id="flag" transform="translate(1054.811 103.295)">
+      <path id="Path_1033" data-name="Path 1033" d="M14.074,6.667a2.963,2.963,0,0,1-1.156,2.348h0a2.962,2.962,0,1,1,1.156-2.348Z"/>
+      <path id="Path_1034" data-name="Path 1034" d="M12.593,9.23V43.7H9.63V9.23A2.963,2.963,0,0,0,12.593,9.23Z"/>
+      <path id="Path_1035" data-name="Path 1035" d="M27.408,11.111V26.778A1.578,1.578,0,0,0,27.1,26.7h-.074a1.927,1.927,0,0,0-.3,0H14.074V10.371H26.667A.741.741,0,0,1,27.408,11.111Z"/>
+      <path id="Path_1036" data-name="Path 1036" d="M35.593,24.682l2.637,7.911H20.682A.681.681,0,0,1,20,31.912v-.119a.681.681,0,0,1,.681-.681h6.045a2.163,2.163,0,0,0,2.163-2.163V16.3h9.341l-2.637,7.911A.741.741,0,0,0,35.593,24.682Z"/>
+      <path id="Path_1037" data-name="Path 1037" d="M27.408,28.83v.119a.681.681,0,0,1-.681.681H20.682a1.926,1.926,0,0,0-.3,0h-.074A1.578,1.578,0,0,0,20,29.7V28.149h6.726A.681.681,0,0,1,27.408,28.83Z"/>
+    </g>
+  </g>
+</svg>

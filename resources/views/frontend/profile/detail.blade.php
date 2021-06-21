@@ -28,11 +28,11 @@
                   <div class="col-sm-12 col-ms-12 col-lg-12 text-center">
                      <div class="row">
                         <div class="col-sm-12 col-ms-12 col-lg-12 text-center">
-                              <img src='{{ asset("images/profile/icons/location.svg")}}' alt="story-img" class="avatar-30 ">
+                              <img src='{{ asset("images/icons/location.svg")}}' alt="story-img" class="avatar-30 ">
                               {{  ucwords($profile_detail['city']) }},{{ ucwords($profile_detail['country']) }} 
                            
                         
-                              <img src='{{ asset("images/profile/icons/mask_group.svg")}}' alt="story-img" class="avatar-30">
+                              <img src='{{ asset("images/icons/mask_group.svg")}}' alt="story-img" class="avatar-30">
                               {{ $profile_detail['profession'] }} ,{{ $profile_detail['student_study_fields'] }}
                            
                         </div>
@@ -94,9 +94,11 @@
                         <a class="btn btn-info text-center w-50 mb-2 p-2" href="#">
                            Bookmark profile
                         </a>
+                        @if(Auth::user()->id  != $profile_detail['id'])
                         <a class="btn btn-success text-center w-50 mb-2 p-2" href="{{ route('card.request',['id' => $profile_detail['id']]) }}">
                            Create card for {{ $profile_detail['name'] }}
                         </a>
+                        @endif
                    </div>
 
                   </div>

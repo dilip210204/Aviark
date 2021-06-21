@@ -69,6 +69,20 @@
                                         </span>
                                     @enderror
                                 </div>
+
+
+                                 <div class="form-group">
+                                    <label for="password-confirm" class=" col-form-label ">{{ __('Confirm Password') }}</label>
+
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password" >
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+
                                 <div class="d-inline-block w-100">
                                     <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
                                         <input type="checkbox" class="custom-control-input" id="accept" required>

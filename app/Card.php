@@ -6,10 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Card extends Model
 {
-
-    
     protected $fillable = [
-        'user_id','what', 'who', 'special_need','notes','photo','video','audio','knowledge','currency','amount'
+        'requesting','capturing','what', 'who','where', 'special_need','notes','global','photo','video','audio','knowledge','pro','commercial','used_for','proposed_price','currency','amount','start_date','end_date','status',
     ];
-
 }

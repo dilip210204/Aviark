@@ -49,17 +49,17 @@
                   </div>
                   <div class="col-sm-1 col-ms-1 col-lg-1 text-right">
                      @if($card->photo)
-                        <img src="{{ asset('images/profile/icons/photo.svg')}}" alt="story-img" class="avatar-30">
+                        <img src="{{ asset('images/icons/photo.svg')}}" alt="story-img" class="avatar-30">
                      @endif
 
                      @if($card->video)
-                        <img src="{{ asset('images/profile/icons/video.svg')}}" alt="story-img" class="avatar-30">
+                        <img src="{{ asset('images/icons/video.svg')}}" alt="story-img" class="avatar-30">
                      @endif
                      @if($card->audio)
-                        <img src="{{ asset('images/profile/icons/audio.svg')}}" alt="story-img" class="avatar-30">
+                        <img src="{{ asset('images/icons/audio.svg')}}" alt="story-img" class="avatar-30">
                      @endif
                      @if($card->knowledge)
-                        <img src="{{ asset('images/profile/icons/knowledge.svg')}}" alt="story-img" class="avatar-30">
+                        <img src="{{ asset('images/icons/knowledge.svg')}}" alt="story-img" class="avatar-30">
                      @endif
                   </div>
 
@@ -75,7 +75,7 @@
                             <div class="col-sm-1 col-md-1 col-lg-1">
                             </div>
                             <div class="col-sm-11 col-md-11 col-lg-11">
-                              <img src="{{ asset('images/profile/icons/profile.svg')}}" alt="story-img" class="avatar-30">
+                              <img src="{{ asset('images/icons/profile.svg')}}" alt="story-img" class="avatar-30">
                                {{ $card->city }}, {{ $card->country }}
                            </div>
                         </div>
@@ -83,8 +83,8 @@
                             <div class="col-sm-1 col-md-1 col-lg-1">
                             </div>
                             <div class="col-sm-11 col-md-11 col-lg-11">
-                              <img src="{{ asset('images/profile/icons/location.svg')}}" alt="story-img" class=" avatar-30">
-                              Anywhere
+                              <img src="{{ asset('images/icons/location.svg')}}" alt="story-img" class=" avatar-30">
+                              {{ $card->where }}
                            </div>
                         </div>
                          <div class="row d-flex align-items-center">
@@ -93,11 +93,18 @@
                             <div class="col-sm-11 col-md-11 col-lg-11">
                               <div class="row">
                                  <div class="col-sm-6 col-md-6 col-lg-6 text-left">
-                                 <img src="{{ asset('images/profile/icons/search_profession.svg')}}" alt="story-img" class=" avatar-30">
-                                    Skateboarders
+                                 <img src="{{ asset('images/icons/search_profession.svg')}}" alt="story-img" class=" avatar-30">
+                                    {{ $card->who }}
                                  </div>
                                  <div class="col-sm-6 col-md-6 col-lg-6 text-right">
-                                   <img src="{{ asset('images/profile/icons/price.svg')}}" alt="story-img" class="avatar-30">{{ strtoupper($card->currency) }} {{ $card->amount }}
+                                   <img src="{{ asset('images/icons/price.svg')}}" alt="price" class="avatar-30">
+                                   <span class="price-section">
+                                    @if($card->proposed_price == 'something_else_field' )
+                                       {{ $card->currency }} {{ $card->amount }}
+                                    @else
+                                     {{ strtoupper($card->proposed_price) }}
+                                    @endif
+                                  </span>
                                  </div>
                               </div>
                            </div>

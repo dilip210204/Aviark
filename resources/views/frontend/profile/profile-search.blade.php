@@ -24,10 +24,10 @@
                            <div class="col-sm-1 col-md-1 col-lg-1">
                            </div>
                            <div class="col-sm-11 col-md-11 col-lg-11">
-                              <img src='{{ asset("images/profile/icons/mask_group.svg")}}' alt="story-img" class="avatar-30">
+                              <img src='{{ asset("images/icons/mask_group.svg")}}' alt="story-img" class="avatar-30">
                               {{ $profile->profession }}
 
-                              <img src='{{ asset("images/profile/icons/location.svg")}}' alt="story-img" class="avatar-30">
+                              <img src='{{ asset("images/icons/location.svg")}}' alt="story-img" class="avatar-30">
                               {{  ucwords($profile->city) }},{{ ucwords($profile->country) }} 
                            </div>
                         </div>
@@ -35,7 +35,7 @@
                           <div class="col-sm-1 col-md-1 col-lg-1">
                           </div>
                           <div class="col-sm-11 col-md-11 col-lg-11">
-                           <img src="{{ asset('images/profile/icons/hobbies.svg')}}" alt="story-img" class=" avatar-30">
+                           <img src="{{ asset('images/icons/hobbies.svg')}}" alt="story-img" class=" avatar-30">
 
                            @php 
                            $hobbies =  explode(",",$profile->hobby);
@@ -51,7 +51,7 @@
                        <div class="col-sm-1 col-md-1 col-lg-1">
                        </div>
                        <div class="col-sm-11 col-md-11 col-lg-11">
-                        <img src="{{ asset('images/profile/icons/interests.svg')}}" alt="story-img" class=" avatar-30">
+                        <img src="{{ asset('images/icons/interests.svg')}}" alt="story-img" class=" avatar-30">
 
                         @php 
                         $interests =  explode(",",$profile->interests);

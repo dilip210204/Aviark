@@ -25,9 +25,19 @@
                      <ul class="navbar-nav ml-auto navbar-list">
                         <li>
                            <a href="profile.html" class="iq-waves-effect d-flex align-items-center">
-                              <img src="images/user/1.jpg" class="img-fluid rounded-circle mr-3" alt="user">
+
+                                     @php
+                                        $file_pointer = 'uploads/profiles/'.Auth::user()->profile;
+                                     @endphp
+
+                                     @if (file_exists($file_pointer))
+                                      <img src="{{ asset('uploads/profiles/'.Auth::user()->profile) }}" class="img-fluid rounded-circle mr-3" alt="user">
+                                     @else
+                                      <img src="{{ asset('images/profile/'.Auth::user()->profile) }}"class="img-fluid rounded-circle mr-3" alt="user">
+                                     @endif
+                             
                               <div class="caption">
-                                 <h6 class="mb-0 line-height">Bni Cyst</h6>
+                                 <h6 class="mb-0 line-height">{{ Auth::user()->name }}</h6>
                               </div>
                            </a>
                         </li>

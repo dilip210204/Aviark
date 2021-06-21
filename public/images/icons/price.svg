@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_274" data-name="Rectangle 274" width="40" height="40" transform="translate(998 107)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Price_Icon" data-name="Price Icon" transform="translate(-998 -107)" clip-path="url(#clip-path)">
+    <g id="_4485_-_Tag" data-name="4485 - Tag" transform="translate(998 107)">
+      <g id="Layer_x0020_1" transform="translate(-3.266 -3.721)">
+        <g id="_392193512" transform="translate(6.836 5)">
+          <g id="Group_72" data-name="Group 72">
+            <path id="_392193896" d="M7.776,11.9l1.735-1.239.012.015,1.531-1.116.85-.607a13.862,13.862,0,0,1,1.372,1.793,1.705,1.705,0,1,0,1.9-.507,15.51,15.51,0,0,0-1.73-2.385L16.85,5.421c1.162-.83,2.918-.315,3.971,1.092L39.394,31.328a1.951,1.951,0,0,1-.17,2.741L27.613,42.36a1.951,1.951,0,0,1-2.648-.728L7.52,16.013c-.99-1.453-.907-3.281.256-4.111ZM15.6,19.721l6.1-4.36,10.305,14.43-6.1,4.36L15.6,19.721Z" transform="translate(-6.836 -4.994)" fill-rule="evenodd"/>
+            <path id="_392193656" d="M9.813,10.356l.695-.487C9.019,8,8.22,6.628,8.149,6.017c-.014-.119.009-.177.058-.18a2.339,2.339,0,0,1,1.1.383,13.539,13.539,0,0,1,5.277,6.121.418.418,0,1,0,.772-.322A14.459,14.459,0,0,0,9.712,5.487,3.051,3.051,0,0,0,8.139,5c-.588.047-.9.4-.821,1.112.087.748.9,2.238,2.494,4.241Z" transform="translate(-6.716 -5)"/>
+          </g>
+          <circle id="_392193536" cx="0.877" cy="0.877" r="0.877" transform="translate(6.781 6.723) rotate(-35.533)"/>
+        </g>
+      </g>
+      <rect id="Rectangle_275" data-name="Rectangle 275" width="40" height="40" fill="none"/>
+    </g>
+  </g>
+</svg>
