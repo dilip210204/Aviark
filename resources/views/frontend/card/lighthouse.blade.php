@@ -8,13 +8,7 @@
    }
 }
 
-.tab-section {
-    padding: 20px;
-    background-color: #F5F5F5;
-    border: 1px solid #70707071;
-    display: inline-block;
-    cursor: pointer;
-}
+
 
 .lighthouse-image{
    width: 50%;
@@ -84,7 +78,16 @@
     color: #8D92A3;
 }
 
-</style>
+.tab-section img{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: #F5F5F5;
+    border: 1px solid #70707071;
+    cursor: pointer;
+    float: left;
+}
+
 </style>
 
 <div id="content-page" class="content-page">
@@ -113,187 +116,32 @@
 
                      <!-- section  -->
                      <div class="row m-5">
-                        <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
-                              <a href="{{route('lighthouse.saved-for-later') }}">
+                        <div class="col-sm-12 col-md-12 col-lg-12 m-auto mb-5 text-center">
+                             
                                  <div class="tab-section">
-                                    <img src="{{ asset('images/icons/saved_for_later.png') }}">
+                                    <img class="saved_for_later" src="{{ asset('images/icons/saved_for_later.png') }}">
                                  </div>
-                              </a>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
-                              <a href="{{route('lighthouse.in-progress') }}">
                                  <div class="tab-section">
-                                    <img src="{{ asset('images/icons/in_progress.png') }}">
+                                    <img class="in_progress" src="{{ asset('images/icons/in_progress.png') }}">
                                  </div>
-                              </a>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
-                              <a href="{{route('lighthouse.completed') }}">
                                  <div class="tab-section">
-                                       <img src="{{ asset('images/icons/completed.png') }}">
+                                       <img class="completed"  src="{{ asset('images/icons/completed.png') }}">
                                  </div>
-                              </a>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
-                              <a href="{{route('lighthouse.declined') }}">
                                  <div class="tab-section">
-                                       <img src="{{ asset('images/icons/declined.png') }}">
+                                       <img  class="declined" src="{{ asset('images/icons/declined.png') }}">
                                  </div>
-                              </a>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-lg-2 m-auto mb-5">
-                              <a href="{{route('lighthouse.dustbin') }}">
                                  <div class="tab-section">
-                                    <img src="{{ asset('images/icons/dustbin.png') }}">
+                                    <img class="dustbin" src="{{ asset('images/icons/dustbin.png') }}">
                                  </div>
-                              </a>
-                        </div>
-                  </div>
-     
 
-   <div class="row">
-       @forelse ($cards as $card)
-
-
-            <div class="col-sm-12 col-md-12 col-lg-12 ">
-                <div class="form-group"> 
-                              <div class="row">
-                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                       <label class="w-100">
-                                        <input type="radio" name="commercial" value="commercial"  checked required>
-                                          <div class="section-outter-box w-100">
-                                                REQUESTING
-                                          </div>
-                                     </label>
-                                  </div>
-                               </div>
-                               <div class="col-sm-6 col-md-6 col-lg-6">
-                                 <div class="form-group">
-                                    <label class="w-100">
-                                     <input type="radio" name="commercial" value="non-commercial" required>
-                                     <div class="section-outter-box w-100">
-                                       CAPTURING
-                                     </div>
-                                  </label>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 ">
-              <div class="data-section">
-                  <div class="iq-card">
-                     <div class="iq-card-body">
-                        <div class="row">
-                           <div class="col-sm-11 col-ms-11 col-lg-11">
-                              <h3>{{ $card->what }}</h3>
-                           </div>
-                           <div class="col-sm-1 col-ms-1 col-lg-1 text-right">
-                              @if($card->photo)
-                              <img src="{{ asset('images/icons/photo.svg')}}" alt="story-img" class="avatar-30">
-                              @endif
-
-                              @if($card->video)
-                              <img src="{{ asset('images/icons/video.svg')}}" alt="story-img" class="avatar-30">
-                              @endif
-                              @if($card->audio)
-                              <img src="{{ asset('images/icons/audio.svg')}}" alt="story-img" class="avatar-30">
-                              @endif
-                              @if($card->knowledge)
-                              <img src="{{ asset('images/icons/knowledge.svg')}}" alt="story-img" class="avatar-30">
-                              @endif
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="col-sm-2 col-ms-2 col-lg-2">
-                              <div class="user-img img-fluid">
-                                 @php
-                                   $capturing =   DB::table('users')->where('name','=', $card->capturing)->get();
-                                 @endphp
-
-                                 @if($card->global == 'yes')
-                                 <img src="{{ asset('uploads/profiles/'.$card->profile)}}" alt="profile" class="rounded-circle avatar-130">
-                                 @else
-                                 <img src="{{ asset('uploads/profiles/'.$capturing[0]->profile)}}" alt="profile" class="rounded-circle avatar-130">
-                                 @endif
-                              </div>
-                           </div>
-                           <div class="col-sm-10 col-ms-10 col-lg-10">
-                              <div class="row d-flex align-items-center">
-                                   <div class="col-sm-1 col-md-1 col-lg-1">
-                                   </div>
-                                   <div class="col-sm-11 col-md-11 col-lg-11">
-                                    <img src="{{ asset('images/icons/profile.svg')}}" alt="story-img" class="avatar-30">
-                                    {{ $card->city }}, {{ $card->country }}
-                                 </div>
-                              </div>
-                              <div class="row d-flex align-items-center">
-                                   <div class="col-sm-1 col-md-1 col-lg-1">
-                                   </div>
-                                   <div class="col-sm-11 col-md-11 col-lg-11">
-                                    <img src="{{ asset('images/icons/location.svg')}}" alt="story-img" class=" avatar-30">
-                                    {{ $card->where }}
-                                 </div>
-                              </div>
-                              <div class="row d-flex align-items-center">
-                                 <div class="col-sm-1 col-md-1 col-lg-1">
-                                 </div>
-                                 <div class="col-sm-11 col-md-11 col-lg-11">
-                                    <div class="row">
-                                       <div class="col-sm-6 col-md-6 col-lg-6 text-left">
-                                          <img src="{{ asset('images/icons/search_profession.svg')}}" alt="story-img" class=" avatar-30">
-                                          
-
-                                          @if($card->global == 'yes')
-                                                {{ $card->who }}
-                                          @else
-                                                {{ $capturing[0]->profession }}
-                                          @endif
-
-                                       </div>
-                                       <div class="col-sm-6 col-md-6 col-lg-6 text-right">
-                                           <img src="{{ asset('images/icons/price.svg')}}" alt="price" class="avatar-30">
-                                           <span class="price-section">
-                                             @if($card->proposed_price == 'something_else' )
-                                             {{ $card->currency }} {{ $card->amount }}
-                                             @else
-                                             {{ strtoupper($card->proposed_price) }}
-                                             @endif
-                                          </span>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
                         </div>
                      </div>
-                  </div>
-              </div>
-            </div>
+      
 
-       @empty
-         <div class="col-sm-12 col-md-12 col-lg-12 mt-5">
-                <div class="row ">
-                  <div class="col-sm-12 col-md-12 col-lg-12">
-                     <h2 class="text-center">Your Lighthouse !</h2>
-                  </div>
-
-                  <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-                     <img class="lighthouse-image" src="{{ asset('images/icons/lighthouse_image.svg') }}">
-                  </div>
-                  <div class="col-sm-12 col-md-12 col-lg-12">
-                     <h2>The lighthouse gives you an overview of all your activity.</h2>
-                     <h4>Click on the tabs above to find:</h4>
-                     <p>
-                          - Requests or profiles you saved for later; as well as drafts of cards you haven’t finished yet - Cards you’ve agreed upon, but are still in progress, - Cards that have been completed (request has been delivered). - Card that have been declined, from either side - And a Dustbin (of course). The Lighthouse is also the way you keep track of your messaging. All messages are tied to the projects you met with !
-                     </p>
-                  </div>
-               </div>
-         </div>
-       @endforelse
-   </div>
-                     <!-- section end -->
+      
+                     <!-- section start -->
+                     <div class="data-section"></div>
+                     <!-- section End -->
 
                   </div>
                </div>
@@ -307,4 +155,41 @@
 </div>
 </div>
 </div>
+@endsection
+@section('custom-script')
+<script type="text/javascript">
+
+   $('.saved_for_later').on('click' ,  function() {
+      
+      $.ajax({
+         type: "GET",
+         url : "{{route('lighthouse.saved-for-later') }}",
+         success:function(data){
+
+            $(".data-section").html('');
+            $(".data-section").html(data);
+
+         }
+
+      })
+
+   });
+
+   $('.in_progress').on('click' ,  function() {
+      alert('asdf')
+   });
+
+   $('.completed').on('click' ,  function() {
+      alert('asdf')
+   });
+
+   $('.declined').on('click' ,  function() {
+      alert('asdf')
+   });
+
+   $('.dustbin').on('click' ,  function() {
+      alert('asdf')
+   });
+  
+</script>
 @endsection

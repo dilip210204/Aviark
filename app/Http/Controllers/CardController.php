@@ -176,10 +176,6 @@ class CardController extends Controller
             ->orWhere('who','=', Auth::user()->id)
             ->get();
 
-        // echo "<pre>";
-        // print_r($cards);
-        // die();
-
         return view('frontend.card.lighthouse',compact('cards'));
     }
 
@@ -193,12 +189,7 @@ class CardController extends Controller
             ->where('requesting','=', Auth::user()->id)
             ->orWhere('who','=', Auth::user()->id)
             ->get();
-
-        // echo "<pre>";
-        // print_r($cards);
-        // die();
-
-        return view('frontend.card.lighthouse',compact('cards'));
+        return view('frontend.card.tab.saved_for_later',compact('cards'));
     }
 
     public function declined(Request $request)
