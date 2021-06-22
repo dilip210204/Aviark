@@ -154,11 +154,11 @@
          if($('input[name="student"]').is(':checked'))
          {
            $('.student-section').removeClass('d-none');
-           $("input").prop('required',true);
+           $('input[name="student_study_fields"]').prop('required',true);
          }else
          {
            $('.student-section').addClass('d-none');
-           $("input").prop('required',false);
+           $('input[name="student_study_fields"]').prop('required',false);
          }
    });
 

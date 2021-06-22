@@ -85,7 +85,15 @@
                            <div class="col-sm-2 col-ms-2 col-lg-2">
                               <a href="{{ route('profile.browse.detail', ['id' => $profile->id]) }}">
                                  <div class="user-img img-fluid">
-                                    <img src="{{ asset('uploads/profiles/'.$profile->profile )}}" alt="" class="rounded-circle avatar-130">
+                                    @php
+                                        $file_pointer = 'uploads/profiles/'.$profile->profile;
+                                     @endphp
+
+                                     @if (file_exists($file_pointer))
+                                      <img src="{{ asset('uploads/profiles/'.$profile->profile) }}" alt="profile-img" class="rounded-circle avatar-130">
+                                     @else
+                                      <img src="{{ asset('images/profile/'.$profile->profile) }}" alt="profile-img" class="rounded-circle avatar-130">
+                                     @endif
                                  </div>
                               </a>
                            </div>
