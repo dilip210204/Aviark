@@ -263,7 +263,11 @@
                            <div class="row">
                               <div class="col-sm-2 col-ms-2 col-lg-2">
                                  <div class="user-img img-fluid">
-                                    <img src="{{ asset('uploads/profiles/'.$card[0]->profile)}}" alt="story-img" class="rounded-circle avatar-130">
+                                 @if(!empty(file_exists('images/profile/'.$card[0]->profile)))
+                                    <img src="{{ asset('images/profile/'.$card[0]->profile)}}" alt="profile" class="rounded-circle avatar-130">
+                                 @else
+                                    <img src="{{ asset('uploads/profiles/'.$card[0]->profile)}}" alt="profile" class="rounded-circle avatar-130">
+                                 @endif
                                  </div>
                               </div>
                               <div class="col-sm-10 col-ms-10 col-lg-10">

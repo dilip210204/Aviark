@@ -73,7 +73,7 @@ class CardController extends Controller
        if($cards->global == "yes"){
 
         $card = DB::table('cards as a')
-                ->join('users as b', 'b.id', '=', 'a.user_id')
+                ->join('users as b', 'b.id', '=', 'a.requesting')
                 ->select('a.*','b.*')
                 ->where('a.id','=',$request->id)
                 ->orwhere('b.profession','=','a.who')
