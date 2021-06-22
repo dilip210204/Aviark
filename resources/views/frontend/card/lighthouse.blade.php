@@ -140,7 +140,27 @@
 
       
                      <!-- section start -->
-                     <div class="data-section"></div>
+                     <div class="data-section">
+                              <div class="row">
+                                 <div class="col-sm-12 col-md-12 col-lg-12 mt-5">
+                                   <div class="row ">
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                       <h2 class="text-center">Your Lighthouse !</h2>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                                       <img class="lighthouse-image" src="{{ asset('images/icons/big_lighthouse.svg') }}">
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                       <h2>The lighthouse gives you an overview of all your activity.</h2>
+                                       <h4>Click on the tabs above to find:</h4>
+                                       <p>
+                                        - Requests or profiles you saved for later; as well as drafts of cards you haven’t finished yet - Cards you’ve agreed upon, but are still in progress, - Cards that have been completed (request has been delivered). - Card that have been declined, from either side - And a Dustbin (of course). The Lighthouse is also the way you keep track of your messaging. All messages are tied to the projects you met with !
+                                       </p>
+                                    </div>
+                               </div>
+                            </div>
+                         </div>
+                     </div>
                      <!-- section End -->
 
                   </div>
@@ -168,27 +188,55 @@
 
             $(".data-section").html('');
             $(".data-section").html(data);
-
          }
-
-      })
+      });
 
    });
 
    $('.in_progress').on('click' ,  function() {
-      alert('asdf')
+      
+      $.ajax({
+         type: "GET",
+         url : "{{route('lighthouse.in-progress') }}",
+         success:function(data){
+            $(".data-section").html('');
+            $(".data-section").html(data);
+         }
+      });
+
    });
 
    $('.completed').on('click' ,  function() {
-      alert('asdf')
+      $.ajax({
+         type: "GET",
+         url : "{{route('lighthouse.completed') }}",
+         success:function(data){
+            $(".data-section").html('');
+            $(".data-section").html(data);
+         }
+      });
    });
 
    $('.declined').on('click' ,  function() {
-      alert('asdf')
+      $.ajax({
+         type: "GET",
+         url : "{{route('lighthouse.declined') }}",
+         success:function(data){
+            $(".data-section").html('');
+            $(".data-section").html(data);
+         }
+      });
    });
 
    $('.dustbin').on('click' ,  function() {
-      alert('asdf')
+      $.ajax({
+         type: "GET",
+         url : "{{route('lighthouse.dustbin') }}",
+         success:function(data){
+            $(".data-section").html('');
+            $(".data-section").html(data);
+         }
+      });
    });
   
 </script>

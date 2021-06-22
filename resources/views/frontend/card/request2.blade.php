@@ -182,7 +182,7 @@
                      </div>
                      <div class="form-group">
                         <label for="amount">Amount</label>
-                        <input type="text" name="amount" class="form-control amount_field" placeholder="e.g., ‘50’…. ’90’….">
+                        <input type="number" name="amount" class="form-control amount_field" placeholder="e.g., ‘50’…. ’90’….">
                      </div>
                   </div>
                </div>
@@ -441,8 +441,6 @@
 
     $('input[type=radio][name=proposed_price]').on('change',function(){
 
-       
-
          var proposed_price = this.value;
          var price;
 
@@ -453,12 +451,29 @@
          }else if(proposed_price == "something_else"){
             price = "Something Else";
          }
+            $(".price-section").html('');
+            $(".price-section").html(price);
+        });  
+
+    $("input[type=text][name=currency]").on('keyup', function () {
+         var currency = this.value.toUpperCase();
+
+         var amount =   $("input[type=number][name=amount]").val();
+         var proposed_price = currency.toUpperCase() +' '+ amount;
 
          $(".price-section").html('');
-         $(".price-section").html(price);
+         $(".price-section").html(proposed_price);
+    });
 
+    $("input[type=number][name=amount]").on('keyup', function () {
+         var amount = this.value.toUpperCase();
 
-        });  
+         var currency =   $("input[type=text][name=currency]").val();
+         var proposed_price = currency.toUpperCase() +' '+ amount;
+
+         $(".price-section").html('');
+         $(".price-section").html(proposed_price);
+    })
 
 </script>
 @endsection

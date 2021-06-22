@@ -143,7 +143,7 @@ class CardController extends Controller
         if($card->global == "yes"){
             return redirect('noah');
         }else{
-            return redirect('lighthouse/in-progress');
+            return redirect('lighthouse');
         }
     }
 
@@ -162,7 +162,7 @@ class CardController extends Controller
             // print_r($cards);
             // die();
 
-        return view('frontend.card.lighthouse',compact('cards'));
+        return view('frontend.card.tab.in_progress',compact('cards'));
     }
 
     public function completed(Request $request)
@@ -176,7 +176,7 @@ class CardController extends Controller
             ->orWhere('who','=', Auth::user()->id)
             ->get();
 
-        return view('frontend.card.lighthouse',compact('cards'));
+        return view('frontend.card.tab.completed',compact('cards'));
     }
 
     public function saved_for_later(Request $request)
@@ -194,38 +194,28 @@ class CardController extends Controller
 
     public function declined(Request $request)
     {
-         $cards = DB::table('cards as a')
+        $cards = DB::table('cards as a')
             ->join('users as b', 'b.id', '=', 'a.requesting')
             ->select('a.*', 'b.city as city' ,'b.country as country' ,'b.profile as profile','b.hobby as hobby' ,'b.interests as interests')
             // ->where('global','=','no')
             ->where('status','=','declined')
-            ->where('user_id','=', Auth::user()->id)
+            ->where('requesting','=', Auth::user()->id)
             ->orWhere('who','=', Auth::user()->id)
             ->get();
-
-        // echo "<pre>";
-        // print_r($cards);
-        // die();
-
-        return view('frontend.card.lighthouse',compact('cards'));
+        return view('frontend.card.tab.declined',compact('cards'));
     }
 
     public function dustbin(Request $request)
     {
-         $cards = DB::table('cards as a')
+        $cards = DB::table('cards as a')
             ->join('users as b', 'b.id', '=', 'a.requesting')
             ->select('a.*', 'b.city as city' ,'b.country as country' ,'b.profile as profile','b.hobby as hobby' ,'b.interests as interests')
             // ->where('global','=','no')
-            ->where('status','=','declined')
-            ->where('user_id','=', Auth::user()->id)
+            ->where('status','=','dustbin')
+            ->where('requesting','=', Auth::user()->id)
             ->orWhere('who','=', Auth::user()->id)
             ->get();
-
-        // echo "<pre>";
-        // print_r($cards);
-        // die();
-
-        return view('frontend.card.lighthouse',compact('cards'));
+        return view('frontend.card.tab.dustbin',compact('cards'));
     }
 
 
