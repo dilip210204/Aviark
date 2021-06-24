@@ -1,42 +1,45 @@
  <div class="row">
+     <div class="col-sm-12 col-md-12 col-lg-12 ">
+        <div class="form-group"> 
+              <div class="row">
+                     <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-group">
+                           <label class="w-100">
+                            <input type="radio" name="commercial" value="commercial"  checked required>
+                              <div class="section-outter-box w-100">
+                                    REQUESTING
+                              </div>
+                         </label>
+                      </div>
+                   </div>
+                   <div class="col-sm-6 col-md-6 col-lg-6">
+                     <div class="form-group">
+                        <label class="w-100">
+                         <input type="radio" name="commercial" value="non-commercial" required>
+                         <div class="section-outter-box w-100">
+                           CAPTURING
+                         </div>
+                      </label>
+                   </div>
+                </div>
+             </div>
+        </div>
+     </div>
        @forelse ($cards as $card)
 
-
-            <div class="col-sm-12 col-md-12 col-lg-12 ">
-                <div class="form-group"> 
-                              <div class="row">
-                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                       <label class="w-100">
-                                        <input type="radio" name="commercial" value="commercial"  checked required>
-                                          <div class="section-outter-box w-100">
-                                                REQUESTING
-                                          </div>
-                                     </label>
-                                  </div>
-                               </div>
-                               <div class="col-sm-6 col-md-6 col-lg-6">
-                                 <div class="form-group">
-                                    <label class="w-100">
-                                     <input type="radio" name="commercial" value="non-commercial" required>
-                                     <div class="section-outter-box w-100">
-                                       CAPTURING
-                                     </div>
-                                  </label>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-            </div>
             <div class="col-sm-12 col-md-12 col-lg-6 ">
               <div class="data-section">
                   <div class="iq-card">
                      <div class="iq-card-body">
                         <div class="row">
-                           <div class="col-sm-11 col-ms-11 col-lg-11">
+                           <div class="col-sm-10 col-ms-10 col-lg-10">
                               <h3>{{ $card->what }}</h3>
                            </div>
-                           <div class="col-sm-1 col-ms-1 col-lg-1 text-right">
+                           <div class="col-sm-2 col-md-2 col-lg-2 text-right d-flex">
+                            @if($card->global == 'yes')
+                             <img src="{{ asset('images/icons/globe-removebg.png')}}" alt="story-img" class="avatar-30">
+                            @endif
+
                               @if($card->photo)
                               <img src="{{ asset('images/icons/photo.svg')}}" alt="story-img" class="avatar-30">
                               @endif
@@ -54,17 +57,24 @@
                         </div>
                         <div class="row">
                            <div class="col-sm-2 col-ms-2 col-lg-2">
-                              <div class="user-img img-fluid">
-                                 @php
-                                   $capturing =   DB::table('users')->where('name','=', $card->capturing)->get();
-                                 @endphp
+                              <a href="{{ route('card.lighthouse.details', ['id' => $card->id]) }}">
+                                    <div class="user-img img-fluid">
+                                         @php
+                                           $capturing =   DB::table('users')->where('name','=', $card->capturing)->get();
+                                         @endphp
 
-                                 @if($card->global == 'yes')
-                                 <img src="{{ asset('uploads/profiles/'.$card->profile)}}" alt="profile" class="rounded-circle avatar-130">
-                                 @else
-                                 <img src="{{ asset('uploads/profiles/'.$capturing[0]->profile)}}" alt="profile" class="rounded-circle avatar-130">
-                                 @endif
-                              </div>
+                                         @if($card->global == 'yes')
+                                            @if(!empty(file_exists('images/profile/'.$card->profile)))
+                                              <img src="{{ asset('images/profile/'.$card->profile)}}" alt="profile" class="rounded-circle avatar-130">
+                                            @else
+                                              <img src="{{ asset('uploads/profiles/'.$card->profile)}}" alt="profile" class="rounded-circle avatar-130">
+                                            @endif
+                                         @else
+                                         <img src="{{ asset('uploads/profiles/'.$capturing[0]->profile)}}" alt="profile" class="rounded-circle avatar-130">
+
+                                         @endif
+                                    </div>
+                              </a>
                            </div>
                            <div class="col-sm-10 col-ms-10 col-lg-10">
                               <div class="row d-flex align-items-center">

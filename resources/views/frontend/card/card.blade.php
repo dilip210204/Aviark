@@ -70,7 +70,7 @@
                            @if(!empty(file_exists('images/profile/'.$card->profile)))
                               <img src="{{ asset('images/profile/'.$card->profile)}}" alt="profile" class="rounded-circle avatar-130">
                            @else
-                              <img src="{{ asset('images/profile/'.$card->profile)}}" alt="profile" class="rounded-circle avatar-130">
+                              <img src="{{ asset('uploads/profiles/'.$card->profile)}}" alt="profile" class="rounded-circle avatar-130">
                            @endif
 
 

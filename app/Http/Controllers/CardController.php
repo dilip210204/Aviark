@@ -152,7 +152,7 @@ class CardController extends Controller
          $cards = DB::table('cards as a')
             ->join('users as b', 'b.id', '=', 'a.requesting')
             ->select('a.*', 'b.city as city' ,'b.country as country' ,'b.profile as profile','b.hobby as hobby' ,'b.interests as interests')
-            ->where('global','=','no')
+            // ->where('global','=','no')
             ->where('status','=','in_progress')
             ->where('requesting','=', Auth::user()->id)
             ->get();
@@ -216,6 +216,23 @@ class CardController extends Controller
             ->orWhere('who','=', Auth::user()->id)
             ->get();
         return view('frontend.card.tab.dustbin',compact('cards'));
+    }
+
+
+    public function request_details(Request $request)
+    {
+        $cards = DB::table('cards as a')
+        ->join('users as b', 'b.id', '=', 'a.requesting')
+
+        ->select('a.*', 'b.city as city' ,'b.country as country' ,'b.profile as profile','b.hobby as hobby' ,'b.interests as interests')
+        ->where('a.id','=', $request->id)
+        ->get();
+
+        // echo "<pre>";
+        // print_r($cards);
+        // die();
+
+        return view('frontend.card.request_details',compact('cards'));
     }
 
 

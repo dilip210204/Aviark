@@ -43,6 +43,7 @@ Route::group(['prefix' =>'card'], function(){
 		Route::post('/next', 'CardController@next')->name('card.request.next');
 		Route::get('/request2/{id}', 'CardController@request2')->name('card.request2');
 		Route::post('/submit/{id}', 'CardController@submit')->name('card.request.submit');
+		Route::get('/card/lighthouse/details/{id}', 'CardController@request_details')->name('card.lighthouse.details');
 	});
 
 		Route::get('/noah', 'CardController@noah')->name('noah');
